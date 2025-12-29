@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Mishra | Web Developer</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    cursor:none;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+    background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor{
+    width:8px;
+    height:8px;
+    background:#00c6ff;
+    border-radius:50%;
+    position:fixed;
+    z-index:999;
+    pointer-events:none;
+}
+.cursor-ring{
+    width:35px;
+    height:35px;
+    border:2px solid rgba(0,198,255,.6);
+    border-radius:50%;
+    position:fixed;
+    z-index:998;
+    pointer-events:none;
+    transition:.15s ease-out;
+}
+
+/* ===== HEADER ===== */
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 10%;
+}
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+.hero img{
+    width:300px;
+    border-radius:50%;
+    border:4px solid #00c6ff;
+    box-shadow:0 0 40px rgba(0,198,255,.6);
+    animation:float 4s ease-in-out infinite;
+    object-fit: contain;
+    background: black;
+    height: 300px;
+}
+.hero h1{font-size:3.5rem;}
+.typing{color:#00c6ff;font-size:1.5rem;height:35px;}
+.hero p{margin:20px 0;opacity:.85;}
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:#fff;
+    text-decoration:none;
+    transition:.4s;
+}
+.btn:hover{transform:scale(1.1);}
+
+/* ===== SECTIONS ===== */
+section{padding:80px 10%;}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:50px;}
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== ABOUT ===== */
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+.box{
+    background:rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+/* ===== SKILLS ===== */
+.skill{margin-bottom:20px;}
+.bar{
+    height:8px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    margin-top:6px;
+}
+.bar div{
+    height:100%;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    border-radius:20px;
+}
+
+/* ===== TOOLS ===== */
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+    text-align:center;
+}
+.tool{
+    background:rgba(255,255,255,.08);
+    padding:25px;
+    border-radius:20px;
+    transition:.4s;
+}
+.tool img{
+    width:48px;
+    height:48px;
+    filter:grayscale(100%);
+    transition:.4s;
+}
+.tool span{
+    display:block;
+    margin-top:12px;
+    font-weight:500;
+}
+.tool:hover{
+    transform:translateY(-12px) scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+.tool:hover img{
+    filter:grayscale(0);
+}
+
+/* ===== PROJECTS ===== */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+.card{
+    background:rgba(255,255,255,.08);
+    padding:25px;
+    border-radius:20px;
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+.card a{color:#00c6ff;text-decoration:none;}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:30px;opacity:.6;}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@media(max-width:900px){
+    .hero{grid-template-columns:1fr;text-align:center;}
+    .hero img{margin:auto;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<header>
+<div class="hero">
+    <img src="./images/shivam.jpeg" alt="Candidate">
+    <div>
+        <h1>Shivam Mishra</h1>
+        <div class="typing" id="typing"></div>
+        <p>
+                WordPress-focused Web Developer with hands-on experience in Gutenberg and Classic editors, theme customization, custom templates, and plugins. I publish, optimize, and maintain content following SEO best practices, brand guidelines, security standards, and quality checks to deliver responsive, high-performing websites.
+        </p>
+        <a href="./files/Shivam_Resume.pdf" download class="btn">Download Resume</a>
+    </div>
+</div>
+</header>
+
+<section class="reveal">
+<h2 class="section-title">Hands-on Skills</h2>
+<div class="about">
+    <div class="box">
+        <p>I am a Web Developer with strong hands-on experience in WordPress CMS, Gutenberg and Classic editors, theme customization, plugins, and SEO practices. I also build custom websites using HTML, CSS, JavaScript, Bootstrap, Laravel, and SQL, ensuring secure, responsive, high-quality, and performance-optimized web solutions.</p>
+        <p style="margin-top:15px;">
+            📧 shivam.srtech@gmail.com<br>
+            📞 72198 59182<br>
+            🌐 github.com/shivam4srtech
+        </p>
+    </div>
+    <div class="box">
+        <div class="skill">WordPress<div class="bar"><div style="width:90%"></div></div></div>
+        <div class="skill">HTML / CSS<div class="bar"><div style="width:95%"></div></div></div>
+        <div class="skill">JavaScript<div class="bar"><div style="width:85%"></div></div></div>
+        <div class="skill">Bootstrap<div class="bar"><div style="width:90%"></div></div></div>
+        <div class="skill">Laravel<div class="bar"><div style="width:70%"></div></div></div>
+
+    </div>
+</div>
+</section>
+
+<section class="reveal">
+    <h2 class="section-title">Tools I Use</h2>
+    <div class="tools">
+        <div class="tool"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"><span>Lighthouse</span></div>
+        <div class="tool"><img src="images/search_console.svg"><span>Search Console</span></div>
+        <div class="tool"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg"><span>Chrome DevTools</span></div>
+        <div class="tool"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><span>Git CLI</span></div>
+
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"><span>ChatGPT</span></div>
+        <div class="tool"><img src="images/canva.webp"><span>Canva</span></div>
+    
+    </div>
+</section>
+<section class="reveal">
+<h2 class="section-title">Recent Projects</h2>
+<div class="projects">
+    <div class="card"><h3>Scoopcoupon</h3><p>Coupons Platform</p><a href="http://scoopcoupons.com" target="_blank">Visit</a></div>
+    <div class="card"><h3>Scoopreview</h3><p>Review Platform</p><a href="http://scoopreview.com" target="_blank">Visit</a></div>
+    <div class="card"><h3>CharteredOne</h3><p>Accounting &amp; Legal Services</p><a href="http://charteredone.com" target="_blank">Visit</a></div>
+
+</div>
+</section>
+
+<footer>© 2025 Shivam Mishra | Portfolio crafted to express 🚀</footer>
+
+<script>
+/* Typing Effect */
+const words=["Web Developer", "WordPress Expert","Wordpress Themes", "Wordpress Plugins"];
+let i=0,j=0,t=document.getElementById("typing");
+function type(){
+    if(j<words[i].length){
+        t.innerHTML+=words[i][j++];
+        setTimeout(type,100);
+    }else setTimeout(erase,1500);
+}
+function erase(){
+    if(j>0){
+        t.innerHTML=words[i].substring(0,--j);
+        setTimeout(erase,60);
+    }else{
+        i=(i+1)%words.length;
+        setTimeout(type,400);
+    }
+}
+type();
+
+/* Scroll Reveal */
+document.addEventListener("scroll",()=>{
+    document.querySelectorAll(".reveal").forEach(e=>{
+        if(e.getBoundingClientRect().top < window.innerHeight-100)
+            e.classList.add("active");
+    });
+});
+
+/* Cursor */
+const c=document.querySelector(".cursor");
+const r=document.querySelector(".cursor-ring");
+document.addEventListener("mousemove",e=>{
+    c.style.left=r.style.left=e.clientX+"px";
+    c.style.top=r.style.top=e.clientY+"px";
+});
+</script>
+
+</body>
+</html>
