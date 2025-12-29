@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    cursor:none;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+    background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor{
+    width:8px;
+    height:8px;
+    background:#00c6ff;
+    border-radius:50%;
+    position:fixed;
+    z-index:999;
+    pointer-events:none;
+}
+.cursor-ring{
+    width:35px;
+    height:35px;
+    border:2px solid rgba(0,198,255,.6);
+    border-radius:50%;
+    position:fixed;
+    z-index:998;
+    pointer-events:none;
+    transition:.15s ease-out;
+}
+
+/* ===== HEADER ===== */
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 10%;
+}
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+.hero img{
+    width:300px;
+    border-radius:50%;
+    border:4px solid #00c6ff;
+    box-shadow:0 0 40px rgba(0,198,255,.6);
+    animation:float 4s ease-in-out infinite;
+    object-fit: contain;
+    background: black;
+    height: 300px;
+}
+.hero h1{font-size:3.5rem;}
+.typing{color:#00c6ff;font-size:1.5rem;height:35px;}
+.hero p{margin:20px 0;opacity:.85;}
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:#fff;
+    text-decoration:none;
+    transition:.4s;
+}
+.btn:hover{transform:scale(1.1);}
+
+/* ===== SECTIONS ===== */
+section{padding:80px 10%;}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:50px;}
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== ABOUT ===== */
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+.box{
+    background:rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+/* ===== SKILLS ===== */
+.skill{margin-bottom:20px;}
+.bar{
+    height:8px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    margin-top:6px;
+}
+.bar div{
+    height:100%;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    border-radius:20px;
+}
+
+/* ===== TOOLS ===== */
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+    text-align:center;
+}
+.tool{
+    background:rgba(255,255,255,.08);
+    padding:25px;
+    border-radius:20px;
+    transition:.4s;
+}
+.tool img{
+    width:48px;
+    height:48px;
+    filter:grayscale(100%);
+    transition:.4s;
+}
+.tool span{
+    display:block;
+    margin-top:12px;
+    font-weight:500;
+}
+.tool:hover{
+    transform:translateY(-12px) scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+.tool:hover img{
+    filter:grayscale(0);
+}
+
+/* ===== PROJECTS ===== */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+.card{
+    background:rgba(255,255,255,.08);
+    padding:25px;
+    border-radius:20px;
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+.card a{color:#00c6ff;text-decoration:none;}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:30px;opacity:.6;}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@media(max-width:900px){
+    .hero{grid-template-columns:1fr;text-align:center;}
+    .hero img{margin:auto;}
+}
+@media(max-width:600px){
+    header{
+        padding-top: 40px;
+    }
+    .cursor-ring{
+        display: none;
+    }
+    .cursor{
+        display: none;
+    }
+    .hero h1 {
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+.hero{
+    gap: 25px;
+}
+.box p{
+    font-size: .9rem;
+}
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+section{
+    padding: 20px 5%;
+}
+}
